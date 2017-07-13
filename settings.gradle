@@ -1,1 +1,1 @@
-include ':app', ':glide-qiniu'
+include ':app', ':glide-qiniu', ':placeholder'

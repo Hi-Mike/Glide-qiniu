@@ -11,13 +11,13 @@ import com.bumptech.glide.request.RequestOptions;
 
 @GlideExtension
 public class QiniuGlideExtension {
-    private static final String FORMAT = "format";
+
 
     private QiniuGlideExtension() {
     }
 
     @GlideOption
     public static void format(RequestOptions options, Format format) {
-        options.getOptions().set(Option.memory(FORMAT, Format.origin), format);
+        options.getOptions().set(Option.memory(Keys.FORMAT, Format.origin), format);
     }
 }
