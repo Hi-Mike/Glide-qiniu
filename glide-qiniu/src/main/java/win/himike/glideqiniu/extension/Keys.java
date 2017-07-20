@@ -1,4 +1,4 @@
-package win.himike.glideqiniu;
+package win.himike.glideqiniu.extension;
 
 /**
  * Created by HiMike on 2017/7/14.

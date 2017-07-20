@@ -1,4 +1,4 @@
-package win.himike.glideqiniu;
+package win.himike.glideqiniu.extension;
 
 import com.bumptech.glide.annotation.GlideExtension;
 import com.bumptech.glide.annotation.GlideOption;

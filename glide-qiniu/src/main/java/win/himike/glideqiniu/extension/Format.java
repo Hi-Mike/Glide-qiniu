@@ -1,4 +1,4 @@
-package win.himike.glideqiniu;
+package win.himike.glideqiniu.extension;
 
 public enum Format {
     origin, jpg, gif, png, webp

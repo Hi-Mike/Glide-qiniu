@@ -1,8 +1,5 @@
-package win.himike.glideqiniu.module;
+package win.himike.glideqiniu.url;
 
-import android.util.Log;
-
-import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.ModelLoader;
@@ -12,31 +9,27 @@ import com.bumptech.glide.load.model.stream.BaseGlideUrlLoader;
 
 import java.io.InputStream;
 
-import win.himike.glideqiniu.Keys;
-
-public class QiniuUrlLoader extends BaseGlideUrlLoader<QiniuUrlModel> {
+public class QiniuUrlLoader extends BaseGlideUrlLoader<String> {
 
     protected QiniuUrlLoader(ModelLoader<GlideUrl, InputStream> concreteLoader) {
         super(concreteLoader);
     }
 
     @Override
-    protected String getUrl(QiniuUrlModel s, int width, int height, Options options) {
-        String url = s.getUrl() + QiniuUrlModel.buildQiniuSuffix(options, width, height);
-        Log.d("QiniuUrlLoader", url + " " + options.toString());
-        return url;
+    protected String getUrl(String s, int width, int height, Options options) {
+        return String.format("%s%s", s, QiniuUrlModel.buildQiniuSuffix(options, width, height));
     }
 
 
     @Override
-    public boolean handles(QiniuUrlModel s) {
+    public boolean handles(String s) {
         return true;
     }
 
-    public static class Factory implements ModelLoaderFactory<QiniuUrlModel, InputStream> {
+    public static class Factory implements ModelLoaderFactory<String, InputStream> {
 
         @Override
-        public ModelLoader<QiniuUrlModel, InputStream> build(MultiModelLoaderFactory multiFactory) {
+        public ModelLoader<String, InputStream> build(MultiModelLoaderFactory multiFactory) {
             return new QiniuUrlLoader(multiFactory.build(GlideUrl.class, InputStream.class));
         }
 

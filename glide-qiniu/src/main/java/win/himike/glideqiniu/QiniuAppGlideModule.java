@@ -1,25 +1,24 @@
-package win.himike.glideqiniu.module;
+package win.himike.glideqiniu;
 
 import android.content.Context;
 
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
-import com.bumptech.glide.module.AppGlideModule;
+import com.bumptech.glide.module.LibraryGlideModule;
 
 import java.io.InputStream;
 
-import win.himike.glideqiniu.module.QiniuUrlLoader;
-import win.himike.glideqiniu.module.QiniuUrlModel;
+import win.himike.glideqiniu.url.QiniuUrlLoader;
 
 /**
  * Created by HiMike on 2017/7/14.
  */
 
 @GlideModule
-public class QiniuAppGlideModule extends AppGlideModule {
+public class QiniuAppGlideModule extends LibraryGlideModule {
     @Override
     public void registerComponents(Context context, Registry registry) {
         super.registerComponents(context, registry);
-        registry.append(QiniuUrlModel.class, InputStream.class, new QiniuUrlLoader.Factory());
+        registry.prepend(String.class, InputStream.class, new QiniuUrlLoader.Factory());
     }
 }
