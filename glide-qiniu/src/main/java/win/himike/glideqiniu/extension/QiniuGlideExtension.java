@@ -1,5 +1,7 @@
 package win.himike.glideqiniu.extension;
 
+import android.support.annotation.IntRange;
+
 import com.bumptech.glide.annotation.GlideExtension;
 import com.bumptech.glide.annotation.GlideOption;
 import com.bumptech.glide.load.Option;
@@ -31,19 +33,19 @@ public class QiniuGlideExtension {
     }
 
     @GlideOption
-    public static void rotate(RequestOptions options, int rotate) {
+    public static void rotate(RequestOptions options, @IntRange(from = 1, to = 360) int rotate) {
         options.set(Option.memory(Keys.ROTATE), rotate);
     }
 
     @GlideOption
-    public static void blur(RequestOptions options, int radius, int sigma) {
+    public static void blur(RequestOptions options, @IntRange(from = 1, to = 50) int radius, @IntRange(from = 1) int sigma) {
         options.set(Option.memory(Keys.BLUR), true);
         options.set(Option.memory(Keys.BLUR_RADIUS, 1), radius);
         options.set(Option.memory(Keys.BLUR_SIGMA, 1), sigma);
     }
 
     @GlideOption
-    public static void jpgQuality(RequestOptions options, int quality) {
+    public static void jpgQuality(RequestOptions options, @IntRange(from = 1, to = 100) int quality) {
         options.set(Option.memory(Keys.JPG_QUALITY), quality);
     }
 
