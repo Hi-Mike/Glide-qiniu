@@ -101,6 +101,13 @@ public class QiniuUrlModel {
             sb.append("/sharpen/1");
         }
 
+        if (format == Format.jpg) {
+            int quality = options.get(Option.memory(Keys.JPG_QUALITY, -1));
+            if (quality != -1) {
+                sb.append("/quality/").append(quality);
+            }
+        }
+
         if (format != Format.origin) {
             sb.append("/format/").append(format.toString());
         }

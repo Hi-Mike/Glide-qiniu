@@ -24,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
                 .load("http://7xjww9.com1.z0.glb.clouddn.com/20130221114001385.jpg")
                 .format(Format.webp)
                 .blur(20, 20)
-                .fitView().transition(DrawableTransitionOptions.withCrossFade())
+                .fitView()
+                .transition(DrawableTransitionOptions.withCrossFade())
                 .skipMemoryCache(true)
                 .into((ImageView) findViewById(R.id.image));
         findViewById(R.id.image).setOnClickListener(new View.OnClickListener() {
