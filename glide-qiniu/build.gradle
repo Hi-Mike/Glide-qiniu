@@ -28,9 +28,38 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
 
-    implementation 'com.android.support:appcompat-v7:26.0.0-beta1'
+    provided 'com.android.support:appcompat-v7:26.0.0-beta2'
     testImplementation 'junit:junit:4.12'
 
-    compile 'com.github.bumptech.glide:glide:4.0.0-RC1'
+    implementation 'com.github.bumptech.glide:glide:4.0.0-RC1'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
 }
+
+ext {
+    bintrayRepo = 'Maven'////bintray上的仓库名，一般为maven
+    bintrayName = 'glide-qiniu'//bintray上的项目名
+
+    publishedGroupId = 'win.himike.glide'//JCenter的GroupId
+    artifact = 'glide-qiniu'//JCenter的ArtifactId
+
+    siteUrl = 'https://github.com/Hi-Mike/Glide-qiniu'
+    gitUrl = 'https://github.com/Hi-Mike/Glide-qiniu'
+
+    libraryVersion = '1.0.0'//版本号
+    libraryName = 'glide-qiniu'//项目名字，没什么用
+    libraryDescription = '使用Glide4的generated API方式封装七牛的高级图片处理API'
+
+    //开发者信息
+    developerId = 'hi-mike'
+    developerName = 'hi-mike'
+    developerEmail = ''
+
+    //以上所有信息自行修改，以下不变
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://cdn.rawgit.com/Jude95/JCenter/master/install.gradle'
+apply from: 'https://cdn.rawgit.com/Jude95/JCenter/master/bintray.gradle'

@@ -2,6 +2,12 @@
 
 >使用Glide4的generated API方式封装七牛的高级图片处理API
 
+## 引入Gradle
+
+```gradle
+compile 'win.himike.glide:glide-qiniu:1.0.0'
+```
+
 ## 使用
 
 1. 使用这个库需要用到Glide4的generated API，请参考Glide配置。

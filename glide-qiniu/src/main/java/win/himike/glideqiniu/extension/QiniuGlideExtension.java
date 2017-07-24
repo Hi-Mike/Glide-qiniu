@@ -73,8 +73,6 @@ public class QiniuGlideExtension {
     @GlideOption
     public static void fixScale(RequestOptions options) {
         options.set(Option.memory(Keys.FIX_SCALE_W_H), true);
-//        options.set(Option.memory(Keys.IMAGE_W), width);
-//        options.set(Option.memory(Keys.IMAGE_H), height);
     }
 
     @GlideOption
