@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
                 .load("http://7xjww9.com1.z0.glb.clouddn.com/20130221114001385.jpg")
                 .format(Format.webp)
                 .blur(20, 20)
+                .autoSize()
                 .fitView()
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .skipMemoryCache(true)
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         GlideApp.with(this).asDrawable()
                 .load("http://7xjww9.com1.z0.glb.clouddn.com/20130221114001385.jpg")
                 .format(Format.webp)
+                .autoSize()
                 .size(200, 200)
                 .fitWHMax()
                 .into(new SimpleTarget<Drawable>() {

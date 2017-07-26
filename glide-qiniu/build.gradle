@@ -45,7 +45,7 @@ ext {
     siteUrl = 'https://github.com/Hi-Mike/Glide-qiniu'
     gitUrl = 'https://github.com/Hi-Mike/Glide-qiniu'
 
-    libraryVersion = '1.0.0'//版本号
+    libraryVersion = '1.0.1-alpha'//版本号
     libraryName = 'glide-qiniu'//项目名字，没什么用
     libraryDescription = '使用Glide4的generated API方式封装七牛的高级图片处理API'
 

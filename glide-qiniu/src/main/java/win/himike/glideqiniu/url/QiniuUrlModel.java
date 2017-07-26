@@ -37,8 +37,19 @@ public class QiniuUrlModel {
             sb.append("/strip");
         }
 
+        boolean autoSize = options.get(Option.memory(Keys.AUTO_SIZE, false));
+
         int w = options.get(Option.memory(Keys.IMAGE_W, -1));
         int h = options.get(Option.memory(Keys.IMAGE_H, -1));
+        if (autoSize) {
+            if (width < 200) {
+                width = 200;
+            } else if (width < 640) {
+                width = 640;
+            } else if (width < 1280) {
+                width = 1280;
+            }
+        }
         Format format = options.get(Option.memory(Keys.FORMAT, Format.origin));
         if (options.get(Option.memory(Keys.FIX_SCALE_W_H, false))) {
             if (w > 0 && h > 0) {

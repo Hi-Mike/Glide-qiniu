@@ -109,4 +109,9 @@ public class QiniuGlideExtension {
     public static void fitViewHeight(RequestOptions options) {
         options.set(Option.memory(Keys.FIT_VIEW_HEIGHT), true);
     }
+
+    @GlideOption
+    public static void autoSize(RequestOptions options) {
+        options.set(Option.memory(Keys.AUTO_SIZE), true);
+    }
 }

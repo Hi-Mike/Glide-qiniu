@@ -32,4 +32,6 @@ public class Keys {
     public static final String FIT_VIEW_WIDTH = "fitWidth";
     public static final String FIT_VIEW_HEIGHT = "fitHeight";
     public static final String FIT_VIEW = "fitView";
+
+    public static final String AUTO_SIZE = "autoSize";
 }
