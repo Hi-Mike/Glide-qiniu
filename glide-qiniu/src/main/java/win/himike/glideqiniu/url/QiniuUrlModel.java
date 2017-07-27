@@ -44,8 +44,12 @@ public class QiniuUrlModel {
         if (autoSize) {
             if (width < 200) {
                 width = 200;
+            } else if (width < 320) {
+                width = 320;
             } else if (width < 640) {
                 width = 640;
+            } else if (width < 960) {
+                width = 960;
             } else if (width < 1280) {
                 width = 1280;
             }

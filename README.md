@@ -5,7 +5,7 @@
 ## 引入Gradle
 
 ```gradle
-compile 'win.himike.glide:glide-qiniu:1.0.0'
+compile 'win.himike.glide:glide-qiniu:1.0.1'
 ```
 
 ## 使用
