@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 .autoSize()
                 .size(200, 200)
                 .fitWHMax()
+                .debug()
                 .into(new SimpleTarget<Drawable>() {
                     @Override
                     public void onResourceReady(Drawable resource, Transition<? super Drawable> transition) {

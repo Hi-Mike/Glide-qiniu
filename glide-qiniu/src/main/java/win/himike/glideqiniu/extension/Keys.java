@@ -34,4 +34,6 @@ public class Keys {
     public static final String FIT_VIEW = "fitView";
 
     public static final String AUTO_SIZE = "autoSize";
+
+    public static final String DEBUG = "debug";
 }

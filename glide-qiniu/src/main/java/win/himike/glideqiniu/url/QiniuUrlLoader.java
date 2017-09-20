@@ -1,5 +1,8 @@
 package win.himike.glideqiniu.url;
 
+import android.util.Log;
+
+import com.bumptech.glide.load.Option;
 import com.bumptech.glide.load.Options;
 import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.ModelLoader;
@@ -9,6 +12,8 @@ import com.bumptech.glide.load.model.stream.BaseGlideUrlLoader;
 
 import java.io.InputStream;
 
+import win.himike.glideqiniu.extension.Keys;
+
 public class QiniuUrlLoader extends BaseGlideUrlLoader<String> {
 
     protected QiniuUrlLoader(ModelLoader<GlideUrl, InputStream> concreteLoader) {
@@ -17,7 +22,12 @@ public class QiniuUrlLoader extends BaseGlideUrlLoader<String> {
 
     @Override
     protected String getUrl(String s, int width, int height, Options options) {
-        return String.format("%s%s", s, QiniuUrlModel.buildQiniuSuffix(options, width, height));
+        String url = String.format("%s%s", s, QiniuUrlModel.buildQiniuSuffix(options, width, height));
+        if (options.get(Option.memory(Keys.DEBUG, false))) {
+            Log.d("QiniuUrlLoader",
+                    "ImageSize(" + width + "," + height + ")-- " + url + " --");
+        }
+        return url;
     }
 
 

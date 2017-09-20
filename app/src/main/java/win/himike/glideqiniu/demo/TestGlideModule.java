@@ -2,6 +2,7 @@ package win.himike.glideqiniu.demo;
 
 import android.content.Context;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.Registry;
 import com.bumptech.glide.annotation.GlideModule;
 import com.bumptech.glide.module.AppGlideModule;
@@ -12,9 +13,7 @@ import com.bumptech.glide.module.AppGlideModule;
 
 @GlideModule
 public class TestGlideModule extends AppGlideModule {
-    @Override
-    public void registerComponents(Context context, Registry registry) {
-        super.registerComponents(context, registry);
-//        registry.append(QiniuUrlModel.class, InputStream.class, new QiniuUrlLoader.Factory());
+    @Override public void registerComponents(Context context, Glide glide, Registry registry) {
+        super.registerComponents(context, glide, registry);
     }
 }

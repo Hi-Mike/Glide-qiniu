@@ -38,14 +38,17 @@ public class QiniuGlideExtension {
     }
 
     @GlideOption
-    public static void blur(RequestOptions options, @IntRange(from = 1, to = 50) int radius, @IntRange(from = 1) int sigma) {
+    public static void blur(RequestOptions options,
+                            @IntRange(from = 1, to = 50) int radius,
+                            @IntRange(from = 1) int sigma) {
         options.set(Option.memory(Keys.BLUR), true);
         options.set(Option.memory(Keys.BLUR_RADIUS, 1), radius);
         options.set(Option.memory(Keys.BLUR_SIGMA, 1), sigma);
     }
 
     @GlideOption
-    public static void jpgQuality(RequestOptions options, @IntRange(from = 1, to = 100) int quality) {
+    public static void jpgQuality(RequestOptions options,
+                                  @IntRange(from = 1, to = 100) int quality) {
         options.set(Option.memory(Keys.JPG_QUALITY), quality);
     }
 
@@ -113,5 +116,10 @@ public class QiniuGlideExtension {
     @GlideOption
     public static void autoSize(RequestOptions options) {
         options.set(Option.memory(Keys.AUTO_SIZE), true);
+    }
+
+    @GlideOption
+    public static void debug(RequestOptions options) {
+        options.set(Option.memory(Keys.DEBUG), true);
     }
 }
